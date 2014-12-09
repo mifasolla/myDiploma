@@ -10,7 +10,7 @@ namespace diploma_project_1.Graphs.GreedyAlg {
         private Graph myGraph;
         private int orderingWidth;
 
-      //  private HashSet<int> processedVertices = null;
+       // private HashSet<int> processedVertices = null;
         private double[,] workingAdjacencyMatrix = null;
 
         public GreedyOptimalOrdering(Graph ofGraph, int orderingWidth) {
@@ -32,7 +32,7 @@ namespace diploma_project_1.Graphs.GreedyAlg {
                 List<int> nextPosition = calculateNextOrderingPosition(availableVerticesList, vertexPriorities);
                 ordering.Add(nextPosition);
                 workingAdjacencyMatrix = recalculateWorkingMatrix(workingAdjacencyMatrix, nextPosition, myGraph.Size);
-               // processedVertices.UnionWith(nextPosition);
+              //  processedVertices.UnionWith(nextPosition);
                 availableVerticesList = availableVertices(workingAdjacencyMatrix, myGraph.Size);
             }
 
@@ -97,6 +97,10 @@ namespace diploma_project_1.Graphs.GreedyAlg {
             else {
                 // Как выбрать orderingWidth элементов с availableVertices, у которых
                 // самые большие значения приоритетов..
+                int selectedVertices = 0;
+                for (int i =0; i<vertexPriorities.Count; i++)
+                    
+
             }
 
             return verticesForPosition;

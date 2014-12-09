@@ -7,8 +7,17 @@ namespace diploma_project_1.Graphs.GreedyAlg {
 
     class VertexPriority : IComparable<VertexPriority> {
 
-        private int vertexNumber;
-        private int vertexPriority;
+        private int vertexNumber
+        {
+            get;
+            private set;
+        }
+
+        private int vertexPriority
+        {
+            get;
+            private set;
+        }
 
         public VertexPriority(int vertex, int priority) {
             vertexNumber = vertex;
@@ -24,6 +33,8 @@ namespace diploma_project_1.Graphs.GreedyAlg {
             
             return -1;
         }
+        
+
 
        
     }

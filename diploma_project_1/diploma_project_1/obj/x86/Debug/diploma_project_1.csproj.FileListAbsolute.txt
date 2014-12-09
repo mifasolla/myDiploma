@@ -16,3 +16,5 @@ J:\ДИПЛОМ 6 КУРС\diploma_project_1\diploma_project_1\obj\x86\Debug\dip
 J:\ДИПЛОМ 6 КУРС\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.exe
 J:\ДИПЛОМ 6 КУРС\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.pdb
 J:\ДИПЛОМ 6 КУРС\diploma_project_1\diploma_project_1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.exe
+C:\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.pdb
