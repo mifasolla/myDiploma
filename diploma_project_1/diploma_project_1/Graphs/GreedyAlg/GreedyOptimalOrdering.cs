@@ -98,8 +98,14 @@ namespace diploma_project_1.Graphs.GreedyAlg {
                 // Как выбрать orderingWidth элементов с availableVertices, у которых
                 // самые большие значения приоритетов..
                 int selectedVertices = 0;
-                for (int i =0; i<vertexPriorities.Count; i++)
-                    
+                foreach (VertexPriority priority in vertexPriorities) {
+                    if (availableVertices.Contains(priority.vertexNumber)) {
+                        verticesForPosition.Add(priority.vertexNumber);
+                        if (++selectedVertices == orderingWidth) {
+                            break;
+                        }
+                    }
+                }
 
             }
 

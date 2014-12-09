@@ -7,13 +7,13 @@ namespace diploma_project_1.Graphs.GreedyAlg {
 
     class VertexPriority : IComparable<VertexPriority> {
 
-        private int vertexNumber
+        public int vertexNumber
         {
             get;
             private set;
         }
 
-        private int vertexPriority
+        public int vertexPriority
         {
             get;
             private set;
