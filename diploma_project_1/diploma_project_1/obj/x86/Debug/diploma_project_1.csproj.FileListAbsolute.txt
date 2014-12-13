@@ -18,3 +18,10 @@ J:\ДИПЛОМ 6 КУРС\diploma_project_1\diploma_project_1\bin\Debug\diploma
 J:\ДИПЛОМ 6 КУРС\diploma_project_1\diploma_project_1\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.exe
 C:\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.pdb
+C:\Users\Вика\Desktop\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.exe
+C:\Users\Вика\Desktop\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.pdb
+C:\Users\Вика\Desktop\diploma\myDiploma\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.exe
+C:\Users\Вика\Desktop\diploma\myDiploma\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.pdb
+C:\Users\Вика\Desktop\diploma\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Вика\Desktop\diploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.exe
+C:\Users\Вика\Desktop\diploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.pdb

@@ -9,20 +9,23 @@ namespace diploma_project_1.Graphs.GreedyAlg {
 
         private Graph myGraph;
         private int orderingWidth;
+        
 
        // private HashSet<int> processedVertices = null;
         private double[,] workingAdjacencyMatrix = null;
+       
 
         public GreedyOptimalOrdering(Graph ofGraph, int orderingWidth) {
             myGraph = ofGraph;
             this.orderingWidth = orderingWidth;
         }
 
-         
+        
         public List<List<int>> solve() {
            // processedVertices = new HashSet<int>();
             workingAdjacencyMatrix = myGraph.AdjacencyMatrix;
             List<List<int>> ordering = new List<List<int>>();
+            
 
             List<VertexPriority> vertexPriorities = calculateVertexPriorities();
 
@@ -33,6 +36,7 @@ namespace diploma_project_1.Graphs.GreedyAlg {
                 ordering.Add(nextPosition);
                 workingAdjacencyMatrix = recalculateWorkingMatrix(workingAdjacencyMatrix, nextPosition, myGraph.Size);
               //  processedVertices.UnionWith(nextPosition);
+                availableVerticesList = null;
                 availableVerticesList = availableVertices(workingAdjacencyMatrix, myGraph.Size);
             }
 
@@ -65,20 +69,28 @@ namespace diploma_project_1.Graphs.GreedyAlg {
             
             for (int j = 0; j < list.Count; j++)
                 for (int i = 0; i < size; i++)
-                    matrix[list[j], i] = 0;
+                {
+                    if (matrix[list[j], i] == 1)
+                        matrix[list[j], i] = 0;
 
+                    matrix[i, list[j]] = -1;
+                }
+
+          
                 return matrix;
         }
 
         private List<int> availableVertices(double[,] matrix, int size) {
 
-            int sum = 0;
+           
             List<int> vertices = new List<int>();
 
             for (int j = 0; j < size; j++) {
 
+                int sum = 0;
+
                 for (int i = 0; i < size; i++)
-                    if (matrix[i, j] == 1) sum++;
+                    if ((matrix[i, j] == 1) || (matrix[i,j] == -1)) sum++;
 
                 if (sum == 0)
                     vertices.Add(j);
@@ -95,8 +107,7 @@ namespace diploma_project_1.Graphs.GreedyAlg {
             if (availableVertices.Count <= orderingWidth)
                 verticesForPosition = availableVertices;
             else {
-                // Как выбрать orderingWidth элементов с availableVertices, у которых
-                // самые большие значения приоритетов..
+                
                 int selectedVertices = 0;
                 foreach (VertexPriority priority in vertexPriorities) {
                     if (availableVertices.Contains(priority.vertexNumber)) {

@@ -52,6 +52,8 @@ namespace diploma_project_1.Graphs {
                 for (int j = 0; j < graphData[i].Count; j++)
                     Console.Write(graphData[i][j] + " ");
                 Console.WriteLine();
+
+
             }
         }
 
@@ -64,6 +66,14 @@ namespace diploma_project_1.Graphs {
                 return graphData[vertexNumber].Count;
         }
 
+        public int inboundEdgesToVertex(int vertexNumber)
+        {
+            int priority = 0;
+            for (int i = 0; i < Size; i++)
+                priority += (int)AdjacencyMatrix[i, vertexNumber];
+
+            return priority;
+        }
         private void convertCraph() {
 
             adjacencyMatrix = new double[size, size];
