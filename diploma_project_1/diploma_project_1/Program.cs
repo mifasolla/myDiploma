@@ -11,9 +11,15 @@ namespace diploma_project_1 {
     class Program {
 
         const string fileName = "graph_1.txt";
+
         private static Graph myGraph = new Graph();
-        private static IOrderingAlgorithm myAlgorithm, subOr, myBackAlgorithm;
+
+        private static IOrderingAlgorithm myAlgorithm;
+        private static IOrderingAlgorithm subOr;
+        private static IOrderingAlgorithm myBackAlgorithm;
+
         private static int orderingWidth = 3;
+
         private static List<List<int>> solution = new List<List<int>>();
         private static List<List<int>> solutionSubOrdering = new List<List<int>>();
         private static List<List<int>> reverseSolution = new List<List<int>>();
@@ -23,8 +29,8 @@ namespace diploma_project_1 {
             //myGraph.printToConsole();
 
             //myAlgorithm = new GreedyOptimalOrdering(myGraph, orderingWidth);
-           // solution = myAlgorithm.solve();
-           // printListToFile(solution);
+            // solution = myAlgorithm.solve();
+            // printListToFile(solution);
 
             //subOr = new subOrderingAlgorithm(myGraph);
             //solutionSubOrdering = subOr.solve();
@@ -35,16 +41,14 @@ namespace diploma_project_1 {
 
 
 
-            
+
             //Console.Read();
 
         }
 
-        public static void printListToFile(List<List<int>> list)
-        {
-            StreamWriter f = new StreamWriter("subOrdering.txt") ;
-            for (int i = 0; i < list.Count; i++)
-            {
+        public static void printListToFile(List<List<int>> list) {
+            StreamWriter f = new StreamWriter("subOrdering.txt");
+            for (int i = 0; i < list.Count; i++) {
                 for (int j = 0; j < list[i].Count; j++)
                     f.Write(list[i][j] + "  ");
                 f.WriteLine();

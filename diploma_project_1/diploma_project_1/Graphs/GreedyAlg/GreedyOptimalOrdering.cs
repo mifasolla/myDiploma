@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using diploma_project_1.Utils;
 
 namespace diploma_project_1.Graphs.GreedyAlg {
 
@@ -23,7 +24,7 @@ namespace diploma_project_1.Graphs.GreedyAlg {
         
         public List<List<int>> solve() {
            // processedVertices = new HashSet<int>();
-            workingAdjacencyMatrix = myGraph.AdjacencyMatrix;
+            workingAdjacencyMatrix = MyUtils.copyMatrix(myGraph.AdjacencyMatrix);
             List<List<int>> ordering = new List<List<int>>();
             
 

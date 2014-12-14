@@ -5,13 +5,13 @@ using System.Text;
 
 namespace diploma_project_1.Graphs.GreedyAlg
 {
-    class subOrderingAlgorithm : IOrderingAlgorithm
+    class SubOrderingAlgorithm : IOrderingAlgorithm
     {
         private Graph myGraph;
         private double[,] workingAdjacencyMatrix = null;
 
 
-        public subOrderingAlgorithm(Graph myGraph)
+        public SubOrderingAlgorithm(Graph myGraph)
         {
             this.myGraph = myGraph;
         }

@@ -24,8 +24,8 @@ namespace diploma_project_1.Graphs {
                 if (adjacencyMatrix == null) {
                     convertCraph();
                 }
-                
-                        return adjacencyMatrix;
+
+                return adjacencyMatrix;
             }
         }
 
@@ -59,15 +59,14 @@ namespace diploma_project_1.Graphs {
 
         public int outboundEdgesFromVertex(int vertexNumber) {
 
-           if(graphData[vertexNumber].Count == 1 && graphData[vertexNumber][0] < 0)
+            if (graphData[vertexNumber].Count == 1 && graphData[vertexNumber][0] < 0)
                 return 0;
 
             else
                 return graphData[vertexNumber].Count;
         }
 
-        public int inboundEdgesToVertex(int vertexNumber)
-        {
+        public int inboundEdgesToVertex(int vertexNumber) {
             int priority = 0;
             for (int i = 0; i < Size; i++)
                 priority += (int)AdjacencyMatrix[i, vertexNumber];
@@ -78,12 +77,11 @@ namespace diploma_project_1.Graphs {
 
             adjacencyMatrix = new double[size, size];
 
-           for(int i = 0; i < size; i++)
-           {
-               List<int> list = new List<int>();
-               list.AddRange(graphData[i]);
-               for (int j = 0; j < graphData[i].Count; j++)
-                   adjacencyMatrix[i, list[j]] = 1;
+            for (int i = 0; i < size; i++) {
+                List<int> list = new List<int>();
+                list.AddRange(graphData[i]);
+                for (int j = 0; j < graphData[i].Count; j++)
+                    adjacencyMatrix[i, list[j]] = 1;
             }
 
         }
