@@ -5,11 +5,10 @@ using System.Text;
 
 namespace diploma_project_1.Graphs.GreedyAlg
 {
-    class SubOrderingAlgorithm : GreedyOptimalBackOrdering
+    class SupOrderingAlgorithm : GreedyOptimalOrdering
     {
 
-
-        public SubOrderingAlgorithm(Graph myGraph)
+        public SupOrderingAlgorithm(Graph myGraph)
             : base(myGraph)
         {
         }
@@ -18,8 +17,5 @@ namespace diploma_project_1.Graphs.GreedyAlg
         {
             return null;
         }
-
-
-
     }
 }
