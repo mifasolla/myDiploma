@@ -18,6 +18,7 @@ namespace diploma_project_1 {
         private static GreedyOptimalOrdering myBackAlgorithm;
         private static GreedyOptimalBackOrdering subOr;
         private static GreedyOptimalOrdering supOr;
+        private static GreedyOptimalOrdering newOrderingsAlgorithm;
          
 
         private static int orderingWidth = 3;
@@ -26,6 +27,7 @@ namespace diploma_project_1 {
         private static List<List<int>> solutionSubOrdering = new List<List<int>>();
         private static List<List<int>> solutionSupOrdering = new List<List<int>>();
         private static List<List<int>> reverseSolution = new List<List<int>>();
+        private static List<List<int>> solutions = new List<List<int>>();
 
         static void Main(string[] args) {
             myGraph.getFromFile(fileName);
@@ -61,6 +63,9 @@ namespace diploma_project_1 {
             }
             f1.Close();
 
+            int level;
+            level = solutionSubOrdering.Count;
+        
             supOr = new SupOrderingAlgorithm(myGraph);
             solutionSupOrdering = supOr.solve();
 
@@ -72,11 +77,23 @@ namespace diploma_project_1 {
                 f2.WriteLine();
             }
             f2.Close();
-           
+
+            for (int k = 2; k < level; k++)
+            {
+                newOrderingsAlgorithm = new NewGreedyOptimalOrderingAlgorithm(myGraph, orderingWidth, level);
+                solutions = newOrderingsAlgorithm.solve();
+
+                for (int i = 0; i < solutions.Count; i++)
+                {
+                    for (int j = 0; j < solutions[i].Count; j++)
+                        Console.Write(solutions[i][j] + "  ");
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
 
 
-
-            //Console.Read();
+            Console.Read();
 
         }
 

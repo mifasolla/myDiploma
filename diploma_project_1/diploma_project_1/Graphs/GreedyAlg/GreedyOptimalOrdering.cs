@@ -17,6 +17,7 @@ namespace diploma_project_1.Graphs.GreedyAlg
         // private HashSet<int> processedVertices = null;
         protected double[,] workingAdjacencyMatrix = null;
 
+        
 
         public GreedyOptimalOrdering(Graph ofGraph, int orderingWidth)
         {
@@ -30,8 +31,9 @@ namespace diploma_project_1.Graphs.GreedyAlg
         }
 
 
-        public List<List<int>> solve()
+        public virtual List<List<int>> solve()
         {
+            
             // processedVertices = new HashSet<int>();
             workingAdjacencyMatrix = MyUtils.copyMatrix(myGraph.AdjacencyMatrix);
             List<List<int>> ordering = new List<List<int>>();
@@ -39,7 +41,7 @@ namespace diploma_project_1.Graphs.GreedyAlg
 
 
             List<VertexPriority> vertexPriorities = calculateVertexPriorities();
-
+           // List<VertexPriority> vertexPriorities1 = calculateVertexPriorities(nextPosition, workingAdjacencyMatrix); 
             List<int> availableVerticesList = availableVertices(workingAdjacencyMatrix, myGraph.Size);
 
             while (availableVerticesList.Count > 0)
@@ -57,6 +59,11 @@ namespace diploma_project_1.Graphs.GreedyAlg
 
             return ordering;
         }
+
+        //public virtual List<VertexPriority> calculateVertexPriorities(List<int> nextPosition, double[,] workingAdjacencyMatrix)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public virtual List<VertexPriority> calculateVertexPriorities()
         {
