@@ -31,7 +31,7 @@ namespace diploma_project_1 {
 
         static void Main(string[] args) {
             myGraph.getFromFile(fileName);
-            //myGraph.printToConsole();
+            myGraph.printToConsole();
 
             myAlgorithm = new GreedyOptimalOrdering(myGraph, orderingWidth);
             solution = myAlgorithm.solve();
@@ -64,10 +64,11 @@ namespace diploma_project_1 {
             f1.Close();
 
             int level;
-            level = solutionSubOrdering.Count;
+            
         
             supOr = new SupOrderingAlgorithm(myGraph);
             solutionSupOrdering = supOr.solve();
+            level = solutionSupOrdering.Count;
 
             StreamWriter f2 = new StreamWriter("SupOrder.txt");
             for (int i = 0; i < solutionSupOrdering.Count; i++)
@@ -78,9 +79,11 @@ namespace diploma_project_1 {
             }
             f2.Close();
 
-            for (int k = 2; k < level; k++)
+            for (int k = 2; k < level + 1; k++)
             {
-                newOrderingsAlgorithm = new NewGreedyOptimalOrderingAlgorithm(myGraph, orderingWidth, level);
+                Console.Write("Level is " + k);
+                Console.WriteLine();
+                newOrderingsAlgorithm = new NewGreedyOptimalOrderingAlgorithm(myGraph, orderingWidth, k);
                 solutions = newOrderingsAlgorithm.solve();
 
                 for (int i = 0; i < solutions.Count; i++)

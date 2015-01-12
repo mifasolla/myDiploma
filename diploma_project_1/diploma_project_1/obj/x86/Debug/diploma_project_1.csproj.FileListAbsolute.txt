@@ -30,3 +30,8 @@ C:\cool_stuff\Vika\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\d
 C:\Users\Вика\Desktop\diploma\diploma_project_1\diploma_project_1\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Вика\Desktop\diploma\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.exe
 C:\Users\Вика\Desktop\diploma\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.pdb
+D:\programming\c#\myDiploma\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.exe
+D:\programming\c#\myDiploma\diploma_project_1\diploma_project_1\bin\Debug\diploma_project_1.pdb
+D:\programming\c#\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.csprojResolveAssemblyReference.cache
+D:\programming\c#\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.exe
+D:\programming\c#\myDiploma\diploma_project_1\diploma_project_1\obj\x86\Debug\diploma_project_1.pdb

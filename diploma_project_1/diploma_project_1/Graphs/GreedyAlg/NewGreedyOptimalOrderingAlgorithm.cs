@@ -8,14 +8,14 @@ namespace diploma_project_1.Graphs.GreedyAlg
 {
     class NewGreedyOptimalOrderingAlgorithm : GreedyOptimalOrdering
     {
-        private new Graph myGraph;
-        private GreedyOptimalOrdering subOrderingAlgorithm;
+        
+        
         // private GraphFragmentation newMatrix;
 
         //private int orderWidth;
         private int k;
-
-        List<List<int>> subOrderingSolution = new List<List<int>>();
+        private GreedyOptimalOrdering supOrderingAlgorithm;
+        List<List<int>> supOrderingSolution = new List<List<int>>();
 
         public NewGreedyOptimalOrderingAlgorithm(Graph myGraph, int orderWidth, int level)
             : base(myGraph, orderWidth)
@@ -36,15 +36,29 @@ namespace diploma_project_1.Graphs.GreedyAlg
             List<VertexPriority> vertexPriority = new List<VertexPriority>();
             List<int> nextPosition = new List<int>();
 
-            subOrderingAlgorithm = new SubOrderingAlgorithm(myGraph); 
-            subOrderingSolution = subOrderingAlgorithm.solve();
+            supOrderingAlgorithm = new SupOrderingAlgorithm(myGraph); 
+            supOrderingSolution = supOrderingAlgorithm.solve();
             double[,] myMatrix = MyUtils.copyMatrix(myGraph.AdjacencyMatrix);
 
-            vertices = defineSubgraphVertices(subOrderingSolution);
-            myMatrix = changedMatrix(myMatrix, vertices, myGraph.Size);
-            vertexPriority = calculateVertexPriorities(vertices, myMatrix);
+            vertices = defineSubgraphVertices(supOrderingSolution);
+           // Console.Write(k);
+            //Console.WriteLine();
+            //for (int i = 0; i < vertices.Count; i++)
+             //   Console.Write(vertices[i] + " ");
+            //Console.WriteLine();
 
-           // availableVerticesList = availableVertices(myMatrix, myGraph.Size, vertices);
+            vertexPriority = calculateVertexPriorities();
+            myMatrix = changedMatrix(myMatrix, vertices, myGraph.Size);
+            //for (int i = 0; i < myGraph.Size; i++)
+            //{
+            //    for (int j = 0; j < myGraph.Size; j++)
+            //        Console.Write(myMatrix[i,j] + " ");
+            //    Console.WriteLine();
+            //}
+      
+
+
+               
             availableVerticesList = base.availableVertices(myMatrix, myGraph.Size);
 
             while (availableVerticesList.Count > 0)
@@ -71,23 +85,25 @@ namespace diploma_project_1.Graphs.GreedyAlg
 
         
 
-        public List<VertexPriority> calculateVertexPriorities(List<int> vertices, double[,] myMatrix)
-        {
-            List<VertexPriority> vertexPriorities = new List<VertexPriority>();
-            int sum = 0;
+        //public List<VertexPriority> calculateVertexPriorities(List<int> vertices, double[,] myMatrix)
+        //{
+        //    List<VertexPriority> vertexPriorities = new List<VertexPriority>();
+        //    int sum = 0;
 
-            for (int i = 0; i < vertices.Count; i++)
-            {
-                for (int j = 0; j < myGraph.Size; j++)
-                {
-                    if (myMatrix[vertices[i], j] == 1) sum++;
-                }
+        //    for (int i = 0; i < vertices.Count; i++)
+        //    {
+        //        for (int j = 0; j < myGraph.Size; j++)
+        //        {
+        //            if (myMatrix[vertices[i], j] == 1) sum++;
+        //        }
 
-                vertexPriorities.Add(new VertexPriority(vertices[i], sum));
-            }
+        //        vertexPriorities.Add(new VertexPriority(vertices[i], sum));
+        //    }
 
-            return vertexPriorities;
-        }
+        //    vertexPriorities.Sort();
+
+        //    return vertexPriorities;
+        //}
 
         public double[,] changedMatrix(double[,] myMatrix, List<int> vertices, int size)
         {
@@ -95,7 +111,7 @@ namespace diploma_project_1.Graphs.GreedyAlg
                 for (int j = 0; j < size; j++)
                     if (myMatrix[i, j] == 1)
                         if (!(vertices.Contains(i) && vertices.Contains(j)))
-                            myMatrix[i, j] = 0;
+                            myMatrix[i, j] = -1;
 
             return myMatrix;
         }
