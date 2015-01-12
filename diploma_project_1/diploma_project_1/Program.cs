@@ -19,6 +19,7 @@ namespace diploma_project_1 {
         private static GreedyOptimalBackOrdering subOr;
         private static GreedyOptimalOrdering supOr;
         private static GreedyOptimalOrdering newOrderingsAlgorithm;
+        private static GreedyOptimalBackOrdering greedyOrdering; 
          
 
         private static int orderingWidth = 3;
@@ -28,6 +29,7 @@ namespace diploma_project_1 {
         private static List<List<int>> solutionSupOrdering = new List<List<int>>();
         private static List<List<int>> reverseSolution = new List<List<int>>();
         private static List<List<int>> solutions = new List<List<int>>();
+        private static List<List<int>> greedySolutions = new List<List<int>>();
 
         static void Main(string[] args) {
             myGraph.getFromFile(fileName);
@@ -79,22 +81,37 @@ namespace diploma_project_1 {
             }
             f2.Close();
 
-            for (int k = 2; k < level + 1; k++)
+            //for (int k = 2; k < level + 1; k++)
+            //{
+            //    Console.Write("Level is " + k);
+            //    Console.WriteLine();
+            //    newOrderingsAlgorithm = new NewGreedyOptimalOrderingAlgorithm(myGraph, orderingWidth, k);
+            //    solutions = newOrderingsAlgorithm.solve();
+
+            //    for (int i = 0; i < solutions.Count; i++)
+            //    {
+            //        for (int j = 0; j < solutions[i].Count; j++)
+            //            Console.Write(solutions[i][j] + "  ");
+            //        Console.WriteLine();
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            for (int k = 2; k < solutionSubOrdering.Count + 1; k++)
             {
                 Console.Write("Level is " + k);
                 Console.WriteLine();
-                newOrderingsAlgorithm = new NewGreedyOptimalOrderingAlgorithm(myGraph, orderingWidth, k);
-                solutions = newOrderingsAlgorithm.solve();
+                greedyOrdering = new GreedyGreedyAlgorithm(myGraph, orderingWidth, k);
+                greedySolutions = greedyOrdering.solve();
 
-                for (int i = 0; i < solutions.Count; i++)
+                for (int i = 0; i < greedySolutions.Count; i++)
                 {
-                    for (int j = 0; j < solutions[i].Count; j++)
-                        Console.Write(solutions[i][j] + "  ");
+                    for (int j = 0; j < greedySolutions[i].Count; j++)
+                        Console.Write(greedySolutions[i][j] + "  ");
                     Console.WriteLine();
                 }
                 Console.WriteLine();
             }
-
 
             Console.Read();
 

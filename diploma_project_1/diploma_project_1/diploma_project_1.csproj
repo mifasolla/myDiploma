@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Graphs\Graph.cs" />
     <Compile Include="Graphs\GraphFragmentation.cs" />
+    <Compile Include="Graphs\GreedyAlg\GreedyGreedyAlgorithm.cs" />
     <Compile Include="Graphs\GreedyAlg\GreedyOptimalBackOrdering.cs" />
     <Compile Include="Graphs\GreedyAlg\GreedyOptimalOrdering.cs" />
     <Compile Include="Graphs\GreedyAlg\NewGreedyOptimalOrderingAlgorithm.cs" />
